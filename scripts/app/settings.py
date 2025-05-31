@@ -75,11 +75,16 @@ WSGI_APPLICATION = 'app.wsgi.application'
 
 # Databases
 DATABASES = {
-    'default': dj_database_url.config(
-        default='sqlite:///db.sqlite3',
-        conn_max_age=600,
-        conn_health_checks=True,
-    )
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': 'brayangamer013',
+        'HOST': 'db.<id>.pooler.supabase.com',
+        'PORT': 6543,
+        'CONN_MAX_AGE': 600,
+        'CONN_HEALTH_CHECKS': True,
+    }
 }
 
 # Password validation
